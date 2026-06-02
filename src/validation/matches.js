@@ -1,11 +1,5 @@
 import { z } from "zod";
 
-export const MATCH_STATUS = {
-  SCHEDULED: "scheduled",
-  LIVE: "live",
-  FINISHED: "finished",
-};
-
 const isoDateString = z.iso.datetime();
 
 export const listMatchesQuerySchema = z.object({
