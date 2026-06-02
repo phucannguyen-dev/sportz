@@ -6,11 +6,7 @@ export const MATCH_STATUS = {
   FINISHED: "finished",
 };
 
-const isoDateString = z
-  .string()
-  .refine((value) => z.string().datetime().safeParse(value).success, {
-    message: "Invalid ISO date string",
-  });
+const isoDateString = z.iso.datetime();
 
 export const listMatchesQuerySchema = z.object({
   limit: z.coerce.number().int().positive().max(100).optional(),
